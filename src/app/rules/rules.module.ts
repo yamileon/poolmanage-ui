@@ -13,6 +13,9 @@ import { RulesTableComponent } from './components/rules-table/rules-table.compon
   ],
   exports: [
     RulesTableComponent
+  ],
+  providers: [
+    RulesModule
   ]
 })
 export class RulesModule { }

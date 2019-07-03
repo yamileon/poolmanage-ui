@@ -1,0 +1,21 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@mixin table-row() {
+    position: relative;
+    border: solid black;
+
+    &:hover {
+        color: red;
+    }
+}
+
+table {
+    position: relative;
+    border: solid black;
+
+    &:hover {
+        color: $primary;
+    }
+}

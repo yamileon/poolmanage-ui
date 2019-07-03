@@ -14,7 +14,7 @@ export class RulesTableComponent implements OnInit {
   }
 
   clicked(){
-    RulesService
+    
   }
 
 }

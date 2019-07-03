@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -6,8 +7,11 @@ import { Injectable } from '@angular/core';
 export class RulesService {
   //variables
   
-  constructor() { }
+  constructor(private http: HttpClient) { }
   //get a rule
-  
+
+  get(){
+    return this.http.get("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json");
+  }
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataRequestService } from 'src/app/shared-module/services/data-request.service';
 import { Observable } from 'rxjs';
+import { Iuser } from 'src/app/users/interfaces/iuser';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,15 @@ export class InitialServiceService {
     console.log(this.clickCounter);
   }
 
-  getUserData(): Observable<any> {
-    return this.req.get('http://localhost:8080/user/all');
+  getUserData(): Observable<Iuser> {
+    return this.req.get<Iuser>('http://localhost:8080/user/all');
   }
 
-  postUserData(user): Observable<any> {
-    return this.req.post('', user);
+  postUserData<Iuser>(user: Iuser): Observable<Iuser> {
+    return this.req.post<Iuser>('http://localhost:8080/user/create', user);
+  }
+
+  deleteUserById<Iuser>(id: string): Observable<Iuser> {
+    return this.req.delete<Iuser>(`http://localhost:8080/user/deleteUser/${id}`);
   }
 }

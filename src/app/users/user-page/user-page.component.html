@@ -1,6 +1,15 @@
-<div align="center">
+<html>
+
+<div id="userMain" align="center">
     <p>user-page works!</p>
     <app-update-user></app-update-user>
     <app-search-user></app-search-user>
     <button (click)="clicked()">click me too!</button>
+    <form [formGroup]="loginForm">
+        <input type="text" placeholder="fname" formControlName="fname">
+        <input type="text" placeholder="lname" formControlName="lname">
+        <button (click)="addUser();">create</button>
+    </form>
 </div>
+
+</html>

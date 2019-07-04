@@ -9,11 +9,15 @@ export class DataRequestService {
 
   constructor(private http: HttpClient) { }
 
-  get(url: string): Observable<any> {
-    return this.http.get(url);
+  get<T>(url: string): Observable<T> {
+    return this.http.get<T>(url);
   }
 
-  post(url: string, body: any): Observable<any> {
-    return this.http.post(url, body);
+  post<T>(url: string, body: T): Observable<T> {
+    return this.http.post<T>(url, body);
+  }
+
+  delete<T>(url: string): Observable<T> {
+    return this.http.delete<T>(url);
   }
 }

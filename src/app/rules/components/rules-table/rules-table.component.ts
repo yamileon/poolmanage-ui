@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RulesService } from './../../services/rules.service';
-import { FormControl, FormGroupDirective, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rules-table',
@@ -11,11 +11,14 @@ export class RulesTableComponent implements OnInit {
 
   ruleForm = new FormGroup({
     ruleName: new FormControl('', Validators.required)
-  })
+  });
+  // .valueChanges.subscribe((val) => {
+  //   console.log(val)
+  // })
 
   //ruleName = new FormControl('');
 
-  constructor(private rules_service: RulesService) { }
+  constructor(private rules: RulesService) { }
 
   ngOnInit() {
     // this.ruleName.valueChanges.subscribe((val) => {
@@ -24,8 +27,11 @@ export class RulesTableComponent implements OnInit {
   }
 
   clicked(){
-    this.rules_service.get;
-    
+    console.log(this.rules.get());
+  }
+
+  doThis(){
+    console.log("done this");
   }
 
 }

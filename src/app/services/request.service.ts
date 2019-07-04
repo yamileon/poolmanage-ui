@@ -9,7 +9,7 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  private x: string;
+  x: string;
 
   get<T>(url: string): Observable<any> {
     return this.http.get(url, {
@@ -18,4 +18,5 @@ export class RequestService {
       })
     });
   }
+
 }

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import {RulesModule} from './rules/rules.module'
 
+import { ReactiveFormsModule } from '@angular/forms'
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +15,8 @@ import {RulesModule} from './rules/rules.module'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RulesModule
+    RulesModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

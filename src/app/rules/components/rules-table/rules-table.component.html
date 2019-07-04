@@ -1,8 +1,13 @@
 <p>rules-table works!</p>
 <div>
-    <table>
-        <th id = rule-header>rule set</th>
-        <th id = rule-description>description</th>
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th id = rule-header>rule set</th>
+                <th id = rule-description>description</th>
+            </tr>
+        </thead>
+        
         <tbody>
             <tr>
                 <td>QA</td>
@@ -14,4 +19,11 @@
             </tr>
         </tbody>
     </table>
+
+    <button onclick="clicked()">click me</button>
+
+    <input type="text" placeholder="rule name" [formGroup]="ruleForm">
+    {{ruleName}}
+
+
 </div>

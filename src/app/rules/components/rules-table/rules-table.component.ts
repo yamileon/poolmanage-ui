@@ -9,12 +9,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RulesTableComponent implements OnInit {
 
+
+
   ruleForm = new FormGroup({
     ruleName: new FormControl('', Validators.required)
   });
-  // .valueChanges.subscribe((val) => {
-  //   console.log(val)
-  // })
 
   //ruleName = new FormControl('');
 
@@ -27,11 +26,19 @@ export class RulesTableComponent implements OnInit {
   }
 
   clicked(){
-    console.log(this.rules.get());
+    console.log("clicked");
+    console.log(this.rules.get().subscribe({
+      next(name) {console.log(name);},
+      error(msg) {console.log(msg);}
+    }));
   }
 
   doThis(){
     console.log("done this");
+  }
+
+  findRule(ruleName){
+    console.log(ruleName);
   }
 
 }

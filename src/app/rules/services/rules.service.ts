@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { RequestService as Request } from '../../services/request.service' ;
 import { map, filter, tap } from 'rxjs/operators';
 import { RulesInterface } from '../interfaces/rules-interface';
-import { RequestService as Request } from '../../services/request.service' ;
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +10,15 @@ import { RequestService as Request } from '../../services/request.service' ;
 export class RulesService {
   //variables
   
-  constructor(private request: Request) { }
+  constructor(private req: Request) { }
   //get a rule
 
   get() : Observable<RulesInterface> {
-    return this.request.get<RulesInterface>("/assets/output.json");//.pipe(
-    //   tap((x) => {.,daf,
-    //     x.name;
-    //   })
-    // );
+    return this.req.get<RulesInterface>("../../../assets/output.json").pipe(
+      tap((x) => {
+        x.name;
+      })
+    );
   }
 
   say(){

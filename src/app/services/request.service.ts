@@ -12,7 +12,7 @@ export class RequestService {
   x: string;
 
   get<T>(url: string): Observable<any> {
-    return this.http.get(url, {
+    return this.http.get<T>(url, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })

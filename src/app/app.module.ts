@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { RulesModule } from './rules/rules.module'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { RulesModule } from './rules/rules.module'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RulesModule,
     ReactiveFormsModule
   ],

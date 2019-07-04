@@ -20,10 +20,10 @@
         </tbody>
     </table>
 
-    <input type="button" onclick="clicked()" value="click me">
+    <input type="button" (click)="clicked()" value="click me">
 
    
-    <form [formGroup]="ruleForm">
+    <form [formGroup]="ruleForm" (onchange)="findRule()">
         <input type="text" placeholder="rule name" formControlName="ruleName">
     </form>
     {{ruleName}}

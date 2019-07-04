@@ -1,4 +1,5 @@
 export interface Iuser {
+    username: string,
     fname: string,
     lname: string,
     _id: string,
@@ -6,6 +7,7 @@ export interface Iuser {
 }
 
 export class User implements Iuser{
+    username: string;
     fname: string;    
     lname: string;
     _id: string;

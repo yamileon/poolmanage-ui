@@ -1,14 +1,13 @@
 <html>
 
 <div id="userMain" align="center">
-    <p>user-page works!</p>
-    <app-update-user></app-update-user>
     <app-search-user></app-search-user>
-    <button (click)="clicked()">click me too!</button>
+    <app-update-user></app-update-user>
     <form [formGroup]="loginForm">
-        <input type="text" placeholder="fname" formControlName="fname">
-        <input type="text" placeholder="lname" formControlName="lname">
-        <button (click)="addUser();">create</button>
+        <input type="text" placeholder="first name" formControlName="fname">
+        <input type="text" placeholder="last name" formControlName="lname">
+        <input type="text" placeholder="username" formControlName="username">
+        <button (click)="addUser();">create user</button>
     </form>
 </div>
 

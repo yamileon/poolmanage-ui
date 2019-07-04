@@ -5,10 +5,9 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { InitialServiceService } from '../shared-module/services/initial-service.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { GetSingleUserComponent } from './get-single-user/get-single-user.component';
 
 @NgModule({
-  declarations: [SearchUserComponent, UpdateUserComponent, UserPageComponent, GetSingleUserComponent],
+  declarations: [SearchUserComponent, UpdateUserComponent, UserPageComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule

@@ -13,6 +13,10 @@ export class DataRequestService {
     return this.http.get<T>(url);
   }
 
+  getOne<T>(url: string): Observable<T> {
+    return this.http.get<T>(url);
+  }
+
   post<T>(url: string, body: T): Observable<T> {
     return this.http.post<T>(url, body);
   }

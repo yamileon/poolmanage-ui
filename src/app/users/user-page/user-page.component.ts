@@ -11,6 +11,7 @@ import { User, Iuser } from '../interfaces/iuser';
 export class UserPageComponent implements OnInit {
 
   loginForm = new FormGroup({
+    username: new FormControl(''),
     fname: new FormControl(''),
     lname: new FormControl('')
   });
@@ -18,20 +19,19 @@ export class UserPageComponent implements OnInit {
   constructor(private serv: InitialServiceService) { }
 
   ngOnInit() {
-    this.loginForm.valueChanges.subscribe((val) => {
-      console.log('Group', val);
-    });
   }
 
   loginFormSubmitted() {
     console.log('Submitted');
   }
 
-  clicked() {
-    this.serv.getUserData().subscribe((x) => {
+  getSingleUser() {
+    console.log(this.loginForm.value);
+    this.serv.getOneUser(this.loginForm.value).subscribe((x) => {
       console.log('WHY DOES THIS WORK NOW', x);
     });
-  }
+      // console.log(this.serv.getOneUser(val));
+    }
 
   addUser() {
     const user: Iuser = this.loginForm.value;

@@ -21,6 +21,14 @@ export class InitialServiceService {
     return this.req.get<Iuser>('http://localhost:8080/user/all');
   }
 
+  getOneUser(username: Iuser): Observable<Iuser> {
+    console.log(username.username);
+    let urlString = 'http://localhost:8080/user/byUsername?username=' + username.username;
+    console.log(urlString);
+    return this.req.getOne<Iuser>(urlString);
+
+  }
+
   postUserData<Iuser>(user: Iuser): Observable<Iuser> {
     return this.req.post<Iuser>('http://localhost:8080/user/create', user);
   }

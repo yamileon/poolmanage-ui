@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InitialServiceService } from 'src/app/shared-module/services/initial-service.service';
 
 @Component({
   selector: 'app-search-user',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serv: InitialServiceService) { }
 
   ngOnInit() {
+  }
+
+  getAllUsers() {
+    this.serv.getUserData().subscribe((x) => {
+      console.log('WHY DOES THIS WORK NOW', x);
+    });
   }
 
 }

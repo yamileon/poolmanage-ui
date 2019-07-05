@@ -46,4 +46,14 @@ export class RequestService {
       params: params
     });
   };
+
+  update<T>(url: string, params?:any): Observable<T>{
+
+    return this.http.put<T>(url, params,{
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      }),
+      params: params
+    })
+  }
 }

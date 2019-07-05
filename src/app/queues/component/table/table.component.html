@@ -1,6 +1,6 @@
 <button (click)="clicked()">Get all</button>
 
-<form [formGroup]="loginForm">
+<form [formGroup]="matchForm">
 <input type="text" placeholder="player1name" formControlName="player1name">
 <input type="text" placeholder="player2name" formControlName="player2name">
 <input type="number" placeholder="gameRules" formControlName="gameRules">
@@ -25,6 +25,7 @@
         <td>{{queue.player2name}}</td>
         <td>{{queue.gameRules}}</td>
         <td><button (click)="delete(queue)">Delete</button></td>
+        <td><button (click)="updateQueue(queue)">Update fixture</button></td>
       </tr>
       
     </tbody>

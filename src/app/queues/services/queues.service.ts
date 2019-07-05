@@ -30,5 +30,16 @@ export class QueuesService {
       { id: user._id }
     );
   }
+
+  updateGame<Iuser>(currentGame: IUser, newGame: IUser): Observable<Iuser[]>{
+   return this.req.update<Iuser[]>(
+     "http://localhost:8080/update",
+     {currentGame, newGame}
+     
+   ) 
+  }
+
+  
 }
+
 

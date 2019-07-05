@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
 
   queues: IUser[];
 
-  loginForm = new FormGroup({
+  matchForm = new FormGroup({
     player1name: new FormControl('', Validators.required), //Sets default
     player2name: new FormControl(''),
     gameRules: new FormControl(0)
@@ -50,7 +50,7 @@ export class TableComponent implements OnInit {
 
 
   clicked2() {
-    const user: User = this.loginForm.value;
+    const user: User = this.matchForm.value;
 
     this.queue.postUserData("http://localhost:8080/addQueue", user).subscribe((x) => {
       console.log('POST REQUEST COMPLETE', x);
@@ -68,12 +68,21 @@ export class TableComponent implements OnInit {
   }
 
   findOne() {
-    const user: User = this.loginForm.value;
+    const user: User = this.matchForm.value;
     console.log(user._id);
     this.queue.getOne(user)
       .subscribe((data) => {
         console.log(data);
       });
+  }
+  updateQueue(currentGame: IUser) {
+    const newGame: User = this.matchForm.value;
+    console.log(currentGame);
+    console.log(newGame);
+    this.queue.updateGame(currentGame, newGame).subscribe((x) => {
+      console.log('Update complete', x);
+      this.clicked();
+    })
   }
 }
 

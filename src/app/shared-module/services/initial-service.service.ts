@@ -35,6 +35,18 @@ export class InitialServiceService {
     return this.req.put<Iuser>('http://localhost:8080/user/updateUser/' + username + '/', user);
   }
 
+  incrementWin(username: string): Observable<Iuser> {
+    return this.req.putIncrement('http://localhost:8080/user/updateUserInfo/win/' + username, JSON.stringify(""));
+  }
+
+  incrementLoss(username: string): Observable<Iuser> {
+    return this.req.putIncrement('http://localhost:8080/user/updateUserInfo/loss/' + username, JSON.stringify(""));
+  }
+
+  incrementGamesPlayed(username: string): Observable<Iuser> {
+    return this.req.putIncrement('http://localhost:8080/user/updateUserInfo/gamesPlayed/' + username, JSON.stringify(""));
+  }
+
   deleteUserById<Iuser>(id: string): Observable<Iuser> {
     console.log(id);
     return this.req.delete<Iuser>(`http://localhost:8080/user/deleteUser?id=` + id);

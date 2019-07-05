@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InitialServiceService } from '../../shared-module/services/initial-service.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { User, Iuser } from '../interfaces/iuser';
+import { UserUpdateStatsComponent } from '../../shared-module/user-update-stats/user-update-stats.component';
 
 @Component({
   selector: 'app-user-page',
@@ -16,7 +17,7 @@ export class UserPageComponent implements OnInit {
     lname: new FormControl('')
   });
 
-  constructor(private serv: InitialServiceService) { }
+  constructor(private serv: InitialServiceService, private updateStats: UserUpdateStatsComponent) { }
 
   ngOnInit() {
   }

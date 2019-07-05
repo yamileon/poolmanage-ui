@@ -6,10 +6,10 @@ import { InitialServiceService } from '../shared-module/services/initial-service
 import { ReactiveFormsModule } from '@angular/forms';
 import { RemoveUserComponent } from './remove-user/remove-user.component';
 import { DisplayDetailsComponent } from './display-details/display-details.component';
-import { UserUpdateStatsComponent } from '../shared-module/user-update-stats/user-update-stats.component';
+// import { UserUpdateStatsComponent } from '../shared-module/user-update-stats/user-update-stats.component';
 
 @NgModule({
-  declarations: [SearchUserComponent, UserPageComponent, RemoveUserComponent, DisplayDetailsComponent, UserUpdateStatsComponent],
+  declarations: [SearchUserComponent, UserPageComponent, RemoveUserComponent, DisplayDetailsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule
@@ -20,7 +20,7 @@ import { UserUpdateStatsComponent } from '../shared-module/user-update-stats/use
   ],
   providers: [
     InitialServiceService,
-    UserUpdateStatsComponent
+    
   ]
 })
 export class UsersModule { }

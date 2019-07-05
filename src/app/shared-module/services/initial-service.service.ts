@@ -22,9 +22,7 @@ export class InitialServiceService {
   }
 
   getOneUser(username: Iuser): Observable<Iuser> {
-    console.log(username.username);
     let urlString = 'http://localhost:8080/user/byUsername?username=' + username.username;
-    console.log(urlString);
     return this.req.getOne<Iuser>(urlString);
 
   }
@@ -33,7 +31,11 @@ export class InitialServiceService {
     return this.req.post<Iuser>('http://localhost:8080/user/create', user);
   }
 
+  putUser<Iuser>(user: Iuser): Observable<Iuser> {
+    return this.req.put<Iuser>('http://localhost:8080/user/update', user);
+  }
+
   deleteUserById<Iuser>(id: string): Observable<Iuser> {
-    return this.req.delete<Iuser>(`http://localhost:8080/user/deleteUser/${id}`);
+    return this.req.delete<Iuser>(`http://localhost:8080/user/deleteUser?id=` + id);
   }
 }

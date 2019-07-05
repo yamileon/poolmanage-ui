@@ -6,19 +6,19 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ScoresModule } from './scores/scores.module';
-import { AuthModule } from './auth/auth.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    UsersModule
+    HttpClientModule,
+    UsersModule,
     AppRoutingModule,
     ReactiveFormsModule,
     ScoresModule,

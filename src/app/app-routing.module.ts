@@ -6,9 +6,9 @@ import { ScoresModule } from './scores/scores.module';
 import { UserprofileComponent } from './scores/userprofile/userprofile.component';
 
 const routes: Routes = [
-  { path: 'userPage', component: UserPageComponent }
+  { path: 'userPage', component: UserPageComponent },
+  { path: 'scores', component: ScoresComponent }
 ];
-  { path: 'scores', component: ScoresComponent },
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

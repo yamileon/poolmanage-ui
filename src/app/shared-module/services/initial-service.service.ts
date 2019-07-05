@@ -17,8 +17,8 @@ export class InitialServiceService {
     console.log(this.clickCounter);
   }
 
-  getUserData(): Observable<Iuser> {
-    return this.req.get<Iuser>('http://localhost:8080/user/all');
+  getUserData(): Observable<Iuser[]> {
+    return this.req.get<Iuser[]>('http://localhost:8080/user/all');
   }
 
   getOneUser(username: Iuser): Observable<Iuser> {

@@ -1,5 +1,5 @@
 <div class="formdesign">
-  <form [formGroup]="loginForm">
+  <form [formGroup]="matchForm">
     <input type="text" placeholder="Type Player's 1 name..." formControlName="player1name">
     <input type="text" placeholder="Type Player's 2 name..." formControlName="player2name">
     <input type="number" placeholder="gameRules" formControlName="gameRules">
@@ -38,7 +38,7 @@
         <td>{{p2Name}}</td>
         <td>{{ruleSet}}</td>
         <td>
-            <button class="btn btn-outline-info but" (click)="update(queue)"> Update</button>
+            <button class="btn btn-outline-info but" (click)="updateQueue(queue)"> Update</button>
           <button class="btn btn-outline-danger but" (click)="delete(queue)"> Delete</button>
         </td>
       </tr>

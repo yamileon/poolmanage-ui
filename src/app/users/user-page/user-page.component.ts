@@ -15,6 +15,7 @@ export class UserPageComponent implements OnInit {
     fname: new FormControl(''),
     lname: new FormControl('')
   });
+  loginForm: any;
 
   constructor(private serv: InitialServiceService) { }
 

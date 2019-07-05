@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'userPage', component: UserPageComponent },
   { path: 'scores', component: ScoresComponent },
   { path: 'login', component: TableComponent },
-  { path: 'rules', component: RulesComponent }
+  { path: 'rules', component: RulesComponent },
+  { path: '', component: TableComponent }
 ];
 
 

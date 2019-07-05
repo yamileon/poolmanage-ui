@@ -14,9 +14,9 @@ export class RemoveUserComponent implements OnInit {
   }
 
   removeById() {
-    this.serv.deleteUserById(id).subscribe((x) =>{
-      console.log("userDeleted");
-    });
+    // this.serv.deleteUserById(id).subscribe((x) =>{
+    //   console.log("userDeleted");
+    // });
   }
 
 }

@@ -1,15 +1,16 @@
-<button (click)="clicked()">Get all</button>
-
-<form [formGroup]="loginForm">
-<input type="text" placeholder="player1name" formControlName="player1name">
-<input type="text" placeholder="player2name" formControlName="player2name">
-<input type="number" placeholder="gameRules" formControlName="gameRules">
-</form>
-
-<button (click)="clicked2()"> Add</button>
-<button (click)="delete()"> Delete</button>
-<button (click)="findOne()"> Get One</button>
-<table class="table col-md-4">
+<div class="formdesign">
+  <form [formGroup]="loginForm">
+    <input type="text" placeholder="Type Player's 1 name..." formControlName="player1name">
+    <input type="text" placeholder="Type Player's 2 name..." formControlName="player2name">
+    <input type="number" placeholder="gameRules" formControlName="gameRules">
+  </form>
+</div>
+<div class="buttondesign">
+<button class="btn btn-primary but" (click)="clicked()">Add</button>
+<button class="btn btn-primary but" (click)="clicked2()"> click me 2</button>
+</div>
+<div class="tabledesign">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Player 1</th>
@@ -19,13 +20,28 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let queue of queues">
-        <td>{{queue.player1name}}</td>
+      <tr>
+        <td>{{p1Name}}</td>
         <td>vs</td>
-        <td>{{queue.player2name}}</td>
-        <td>{{queue.gameRules}}</td>
-        <td><button (click)="delete(queue)">Delete</button></td>
+        <td>{{p2Name}}</td>
+        <td>{{ruleSet}}</td>
       </tr>
-      
+      <tr>
+        <td>{{p1Name}}</td>
+        <td>vs</td>
+        <td>{{p2Name}}</td>
+        <td>{{ruleSet}}</td>
+      </tr>
+      <tr>
+        <td>{{p1Name}}</td>
+        <td>vs</td>
+        <td>{{p2Name}}</td>
+        <td>{{ruleSet}}</td>
+        <td>
+            <button class="btn btn-outline-info but" (click)="update(queue)"> Update</button>
+          <button class="btn btn-outline-danger but" (click)="delete(queue)"> Delete</button>
+        </td>
+      </tr>
     </tbody>
   </table>
+</div>

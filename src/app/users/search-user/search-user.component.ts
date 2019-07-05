@@ -10,6 +10,8 @@ import { Iuser } from '../interfaces/iuser';
 })
 export class SearchUserComponent implements OnInit {
 
+  currentUsername = sessionStorage.getItem("currentUsername");
+
   constructor(private serv: InitialServiceService) { }
 
   loginForm = new FormGroup({
@@ -33,6 +35,9 @@ export class SearchUserComponent implements OnInit {
     this.serv.getOneUser(this.loginForm.value).subscribe((x) => {
       console.log('WHY DOES THIS WORK NOWsgsegseges', x);
       this.allUsers = [x];
+      let { username } = [x][0];
+      console.log(username);
+      sessionStorage.setItem("currentUsername", JSON.stringify(username));
     });
     }
 

@@ -25,6 +25,10 @@ export class DataRequestService {
     return this.http.put<T>(url, body);
   }
 
+  putIncrement<T>(url:string, body): Observable<T> {
+    return this.http.put<T>(url, body);
+  }
+
   delete<T>(url: string): Observable<T> {
     return this.http.delete<T>(url);
   }

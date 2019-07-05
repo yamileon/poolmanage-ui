@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserprofileComponent } from './scores/userprofile/userprofile.component';
-import { ScoresModule } from './scores/scores.module';
+import { UserPageComponent } from './users/user-page/user-page.component';
 import { ScoresComponent } from './scores/scores.component';
+import { ScoresModule } from './scores/scores.module';
+import { UserprofileComponent } from './scores/userprofile/userprofile.component';
 
 const routes: Routes = [
-  // { path: 'login', component: LoginComponent },
-  { path: 'scores', component: ScoresComponent },
+  { path: 'userPage', component: UserPageComponent }
 ];
+  { path: 'scores', component: ScoresComponent },
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

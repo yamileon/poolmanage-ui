@@ -1,0 +1,14 @@
+<html>
+
+<div id="userMain" align="center">
+    <app-search-user></app-search-user>
+    <app-update-user></app-update-user>
+    <form [formGroup]="loginForm">
+        <input type="text" placeholder="first name" formControlName="fname">
+        <input type="text" placeholder="last name" formControlName="lname">
+        <input type="text" placeholder="username" formControlName="username">
+        <button (click)="addUser();">create user</button>
+    </form>
+</div>
+
+</html>

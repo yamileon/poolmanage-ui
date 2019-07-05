@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InitialServiceService } from 'src/app/shared-module/services/initial-service.service';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Iuser } from '../interfaces/iuser';
 
 @Component({
   selector: 'app-search-user',
@@ -10,13 +12,28 @@ export class SearchUserComponent implements OnInit {
 
   constructor(private serv: InitialServiceService) { }
 
+  loginForm = new FormGroup({
+    username: new FormControl('')
+  });
+
+  allUsers: Iuser[];
+
   ngOnInit() {
   }
 
   getAllUsers() {
     this.serv.getUserData().subscribe((x) => {
       console.log('WHY DOES THIS WORK NOW', x);
+      this.allUsers = x;
     });
   }
+
+  getSingleUser() {
+    console.log(this.loginForm.value);
+    this.serv.getOneUser(this.loginForm.value).subscribe((x) => {
+      console.log('WHY DOES THIS WORK NOWsgsegseges', x);
+      this.allUsers = [x];
+    });
+    }
 
 }

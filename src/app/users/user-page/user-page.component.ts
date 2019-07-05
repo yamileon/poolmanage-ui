@@ -10,7 +10,7 @@ import { User, Iuser } from '../interfaces/iuser';
 })
 export class UserPageComponent implements OnInit {
 
-  loginForm = new FormGroup({
+  createUserForm = new FormGroup({
     username: new FormControl(''),
     fname: new FormControl(''),
     lname: new FormControl('')
@@ -21,26 +21,15 @@ export class UserPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginFormSubmitted() {
+  createUserFormSubmitted() {
     console.log('Submitted');
   }
-
-  getSingleUser() {
-    console.log(this.loginForm.value);
-    this.serv.getOneUser(this.loginForm.value).subscribe((x) => {
-      console.log('WHY DOES THIS WORK NOW', x);
-    });
-      // console.log(this.serv.getOneUser(val));
-    }
 
   addUser() {
     const user: Iuser = this.loginForm.value;
     this.serv.postUserData(user).subscribe((x) =>{
       console.log('It might have worked');
     })
-  }
-
-  deleteUser() {
   }
 
 }

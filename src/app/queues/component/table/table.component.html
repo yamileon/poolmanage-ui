@@ -6,8 +6,7 @@
   </form>
 </div>
 <div class="buttondesign">
-<button class="btn btn-primary but" (click)="clicked()">Add</button>
-<button class="btn btn-primary but" (click)="clicked2()"> click me 2</button>
+  <button class="btn btn-primary but" (click)="clicked2()">Add Players</button>
 </div>
 <div class="tabledesign">
   <table class="table">
@@ -20,29 +19,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{p1Name}}</td>
+      <tr *ngFor="let queue of queues">
+        <td>{{queue.player1name}}</td>
         <td>vs</td>
         <td>{{queue.player2name}}</td>
         <td>{{queue.gameRules}}</td>
-        <td><button (click)="delete(queue)">Delete</button></td>
-        <td><button (click)="updateQueue(queue)">Update fixture</button></td>
-      </tr>
-      <tr>
-        <td>{{p1Name}}</td>
-        <td>vs</td>
-        <td>{{p2Name}}</td>
-        <td>{{ruleSet}}</td>
-      </tr>
-      <tr>
-        <td>{{p1Name}}</td>
-        <td>vs</td>
-        <td>{{p2Name}}</td>
-        <td>{{ruleSet}}</td>
-        <td>
-            <button class="btn btn-outline-info but" (click)="updateQueue(queue)"> Update</button>
-          <button class="btn btn-outline-danger but" (click)="delete(queue)"> Delete</button>
-        </td>
+        <td><button class="btn btn-outline-info but" (click)="updateQueue(queue)"> Update</button></td>
+        <td><button class="btn btn-outline-danger but" (click)="delete(queue)"> Delete</button></td>
       </tr>
     </tbody>
   </table>

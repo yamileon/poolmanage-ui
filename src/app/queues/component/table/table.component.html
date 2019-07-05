@@ -1,0 +1,40 @@
+<button (click)="clicked()">click me</button>
+
+<form [formGroup]="loginForm">
+<input type="text" placeholder="player1name" formControlName="player1name">
+<input type="text" placeholder="player2name" formControlName="player2name">
+<input type="number" placeholder="gameRules" formControlName="gameRules">
+</form>
+
+<button (click)="clicked2()"> click me 2</button>
+<buttpn (click)="delete()"> Delete</buttpn>
+<table class="table col-md-4">
+    <thead>
+      <tr>
+        <th scope="col">Player 1</th>
+        <th scope="col"></th>
+        <th scope="col">Player 2</th>
+        <th scope="col">Rule Set</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td >{{p1Name}}</td>
+        <td>vs</td>
+        <td>{{p2Name}}</td>
+        <td>{{ruleSet}}</td>
+      </tr>
+      <tr>
+          <td >{{p1Name}}</td>
+          <td>vs</td>
+          <td>{{p2Name}}</td>
+          <td>{{ruleSet}}</td>
+        </tr>
+        <tr>
+            <td >{{p1Name}}</td>
+            <td>vs</td>
+            <td>{{p2Name}}</td>
+            <td>{{ruleSet}}</td>
+          </tr>
+    </tbody>
+  </table>

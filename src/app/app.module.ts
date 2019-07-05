@@ -16,8 +16,8 @@ import { QueuesModule } from './queues/queues.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
-    RulesComponent
+    NavbarComponent,
+    RulesComponent,
     TableComponent,
   ],
   imports: [

@@ -18,6 +18,16 @@ export class RequestService {
     });
   }
 
+  getOne<T>(url: string, params?: any): Observable<T> {
+    
+    return this.http.get<T>(url, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      }),
+      params: params
+    });
+  };
+
   post<T>(url: string, body: any): Observable<T> {
     
     return this.http.post<T>(url, body, {
@@ -27,12 +37,13 @@ export class RequestService {
     });
   };
 
-  delete<T>(url: string, body: any): Observable<T> {
+  delete<T>(url: string, params?: any): Observable<T> {
     
     return this.http.delete<T>(url, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
-      })
+      }),
+      params: params
     });
   };
 }

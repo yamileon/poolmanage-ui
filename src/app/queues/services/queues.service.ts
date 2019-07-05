@@ -11,17 +11,24 @@ export class QueuesService {
 
   constructor(private req: RequestService) { }
 
-  getUserData(url: string): Observable<IUser[]> {
-    return this.req.get<IUser[]>(url);
+  getUserData(): Observable<IUser[]> {
+    return this.req.get<IUser[]>("http://localhost:8080/get");
+  }
+
+  getOne(user: IUser): Observable<IUser[]> {
+    return this.req.getOne<IUser[]>("http://localhost:8080/get-one", user);
   }
 
   postUserData<Iuser>(url: string, user: IUser): Observable<Iuser[]> {
-   
+
     return this.req.post<Iuser[]>(url, user);
   }
 
-  deleteUserData<Iuser>(url: string, user: IUser): Observable<Iuser[]>{
-    return this.req.delete<Iuser[]>(url,user);
+  deleteUserData<Iuser>(user: IUser): Observable<Iuser[]> {
+    return this.req.delete<Iuser[]>(
+      "http://localhost:8080/delete",
+      { id: user._id }
+    );
   }
 }
 

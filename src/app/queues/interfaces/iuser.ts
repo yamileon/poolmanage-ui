@@ -1,6 +1,6 @@
 export interface IUser {
 
-    id:Number,
+    _id:string,
     player1name: String,
     player2name:  String,
     gameRules: Number
@@ -8,7 +8,7 @@ export interface IUser {
 }
 
 export class User implements IUser{
-    id:Number  
+    _id:string 
     player1name: String;
     player2name: String;
     gameRules: Number;

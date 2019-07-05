@@ -1,4 +1,4 @@
-<button (click)="clicked()">click me</button>
+<button (click)="clicked()">Get all</button>
 
 <form [formGroup]="loginForm">
 <input type="text" placeholder="player1name" formControlName="player1name">
@@ -6,8 +6,9 @@
 <input type="number" placeholder="gameRules" formControlName="gameRules">
 </form>
 
-<button (click)="clicked2()"> click me 2</button>
-<buttpn (click)="delete()"> Delete</buttpn>
+<button (click)="clicked2()"> Add</button>
+<button (click)="delete()"> Delete</button>
+<button (click)="findOne()"> Get One</button>
 <table class="table col-md-4">
     <thead>
       <tr>
@@ -18,23 +19,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td >{{p1Name}}</td>
+      <tr *ngFor="let queue of queues">
+        <td>{{queue.player1name}}</td>
         <td>vs</td>
-        <td>{{p2Name}}</td>
-        <td>{{ruleSet}}</td>
+        <td>{{queue.player2name}}</td>
+        <td>{{queue.gameRules}}</td>
+        <td><button (click)="delete(queue)">Delete</button></td>
       </tr>
-      <tr>
-          <td >{{p1Name}}</td>
-          <td>vs</td>
-          <td>{{p2Name}}</td>
-          <td>{{ruleSet}}</td>
-        </tr>
-        <tr>
-            <td >{{p1Name}}</td>
-            <td>vs</td>
-            <td>{{p2Name}}</td>
-            <td>{{ruleSet}}</td>
-          </tr>
+      
     </tbody>
   </table>

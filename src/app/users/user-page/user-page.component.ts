@@ -26,10 +26,12 @@ export class UserPageComponent implements OnInit {
   }
 
   addUser() {
-    const user: Iuser = this.loginForm.value;
+    const user: Iuser = this.createUserForm.value;
     this.serv.postUserData(user).subscribe((x) =>{
       console.log('It might have worked');
     })
   }
+
+  
 
 }

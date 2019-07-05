@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { InitialServiceService } from 'src/app/shared-module/services/initial-service.service';
 
 @Component({
@@ -7,16 +7,19 @@ import { InitialServiceService } from 'src/app/shared-module/services/initial-se
   styleUrls: ['./remove-user.component.scss']
 })
 export class RemoveUserComponent implements OnInit {
+  @Input() userId: string;
+  @Output() deleted = new EventEmitter<any>();
 
   constructor(private serv: InitialServiceService) { }
 
   ngOnInit() {
   }
 
-  removeById() {
-    this.serv.deleteUserById(id).subscribe((x) =>{
-      console.log("userDeleted");
-    });
+  removeUser() {
+    this.serv.deleteUserById(this.userId).subscribe((x) =>{
+      console.log('I may have removed someone...');
+      this.deleted.emit();
+    })
   }
 
 }

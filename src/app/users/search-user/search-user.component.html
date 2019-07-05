@@ -4,5 +4,5 @@
     <input type="text" placeholder="username" formControlName="username">
     <button (click)="getSingleUser();">login</button>
 </form>
-<app-display-details *ngFor="let u of allUsers" [user]="u"></app-display-details>
+<app-display-details *ngFor="let u of allUsers" [user]="u" (updated)="getSingleUser()" (deleted)="getAllUsers()"></app-display-details>
 </div>

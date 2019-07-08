@@ -13,11 +13,11 @@ export class QueuesService {
   constructor(private req: RequestService) { }
 
   getUserData(): Observable<IUser[]> {
-    return this.req.get<IUser[]>(env.url+":8080/get");
+    return this.req.get<IUser[]>(env.url+"/get");
   }
 
   getOne(user: IUser): Observable<IUser[]> {
-    return this.req.getOne<IUser[]>(env.url+":8080/get-one", user);
+    return this.req.getOne<IUser[]>(env.url+"/get-one", user);
   }
 
   postUserData<Iuser>(url: string, user: IUser): Observable<Iuser[]> {
@@ -27,14 +27,14 @@ export class QueuesService {
 
   deleteUserData<Iuser>(user: IUser): Observable<Iuser[]> {
     return this.req.delete<Iuser[]>(
-      env.url+":8080/delete",
+      env.url+"/delete",
       { id: user._id }
     );
   }
 
   updateGame<Iuser>(currentGame: IUser, newGame: IUser): Observable<Iuser[]>{
    return this.req.update<Iuser[]>(
-     env.url+":8080/update",
+     env.url+"/update",
      {currentGame, newGame}
      
    ) 

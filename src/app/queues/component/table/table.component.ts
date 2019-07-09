@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QueuesService } from '../../services/queues.service';
 import { FormControl, FormGroup, Validators, MinLengthValidator } from '@angular/forms';
 import { User, IUser } from "../../interfaces/iuser"
-
+import { environment as env } from '../../../../environments/environment'
 
 @Component({
   selector: 'app-table',
@@ -52,7 +52,7 @@ export class TableComponent implements OnInit {
   clicked2() {
     const user: User = this.matchForm.value;
 
-    this.queue.postUserData("http://localhost:8080/addQueue", user).subscribe((x) => {
+    this.queue.postUserData(env.url+"/addQueue", user).subscribe((x) => {
       console.log('POST REQUEST COMPLETE', x);
       this.clicked();
     })
